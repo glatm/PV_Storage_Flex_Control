@@ -1,0 +1,18 @@
+# Obsidian
+.obsidian/workspace*
+.obsidian/cache
+.trash/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# IDEs
+.idea/
+.vscode/
+
+# Nested git repo (paper code, managed separately)
+Optimal-Energy-System-Scheduling-Combining-Mixed-Integer-Programming-and-Deep-Reinforcement-Learning/
