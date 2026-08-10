@@ -16,3 +16,21 @@ venv/
 
 # Nested git repo (paper code, managed separately)
 Optimal-Energy-System-Scheduling-Combining-Mixed-Integer-Programming-and-Deep-Reinforcement-Learning/
+
+# Project working dirs (outputs / data / caches / weights — not source code)
+.workbuddy/
+.scratch/
+backup/
+data/
+results/
+models/
+logs/
+
+# Large / binary artifacts
+*.png
+*.jpg
+*.jpeg
+*.h5
+*.pt
+*.onnx
+*.npy
