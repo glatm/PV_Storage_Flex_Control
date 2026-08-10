@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" width="680" height="360" font-family="Segoe UI, Arial, sans-serif">
+  <defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#2c3e50"/></marker></defs>
+  <rect x="0" y="0" width="680" height="360" fill="#ffffff"/>
+  <text x="340" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b2631">22.8 过流 + 欠压保护（给故障支路装"跳闸"）</text>
+
+  <line x1="40" y1="150" x2="640" y2="150" stroke="#2c3e50" stroke-width="4"/>
+  <text x="340" y="142" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c3e50">48V 直流母线</text>
+
+  <!-- 双源 + 负载 简画 -->
+  <rect x="40" y="60" width="120" height="38" rx="5" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="100" y="83" text-anchor="middle" font-size="11" fill="#2471a3">源1（PI+半桥）</text>
+  <line x1="160" y1="79" x2="240" y2="79" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="240" y1="79" x2="240" y2="150" stroke="#2c3e50" stroke-width="3" marker-end="url(#arr)"/>
+  <rect x="290" y="64" width="150" height="38" rx="5" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="365" y="87" text-anchor="middle" font-size="11" fill="#2471a3">源2（受控源+下垂）</text>
+  <line x1="365" y1="102" x2="365" y2="150" stroke="#2c3e50" stroke-width="3" marker-end="url(#arr)"/>
+  <rect x="520" y="64" width="100" height="38" rx="5" fill="#fadbd8" stroke="#922b21" stroke-width="2"/>
+  <text x="570" y="87" text-anchor="middle" font-size="11" fill="#922b21">负载</text>
+  <line x1="570" y1="64" x2="570" y2="150" stroke="#2c3e50" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- 故障支路 + Brk -->
+  <text x="430" y="178" text-anchor="middle" font-size="11" font-weight="bold" fill="#922b21">故障支路</text>
+  <line x1="430" y1="188" x2="430" y2="205" stroke="#2c3e50" stroke-width="3"/>
+  <rect x="408" y="205" width="44" height="22" rx="3" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1.5"/>
+  <text x="430" y="220" text-anchor="middle" font-size="10" fill="#7f8c8d">SW</text>
+  <line x1="452" y1="216" x2="492" y2="216" stroke="#2c3e50" stroke-width="3"/>
+  <rect x="492" y="204" width="40" height="24" rx="3" fill="#fdebd0" stroke="#ca6f1e" stroke-width="2"/>
+  <text x="512" y="220" text-anchor="middle" font-size="9" fill="#ca6f1e">Rf</text>
+  <line x1="532" y1="216" x2="570" y2="216" stroke="#2c3e50" stroke-width="3"/>
+  <rect x="570" y="204" width="46" height="24" rx="3" fill="#fdebd0" stroke="#ca6f1e" stroke-width="2"/>
+  <text x="593" y="220" text-anchor="middle" font-size="9" fill="#ca6f1e">Brk</text>
+  <line x1="616" y1="216" x2="616" y2="300" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="40" y1="300" x2="640" y2="300" stroke="#2c3e50" stroke-width="3"/>
+
+  <!-- 保护链（高亮） -->
+  <rect x="120" y="240" width="380" height="44" rx="6" fill="#fdebd0" stroke="#ca6f1e" stroke-width="2"/>
+  <text x="310" y="258" text-anchor="middle" font-size="11" font-weight="bold" fill="#ca6f1e">保护链：检测 → 延时确认 → SR 锁存 → 跳闸</text>
+  <text x="310" y="274" text-anchor="middle" font-size="9" fill="#555">|Ibat|&gt;30A 或 Vbus&lt;33.6V → 20~50µs 滤毛刺 → 自锁 → Brk 开断</text>
+  <line x1="593" y1="216" x2="593" y2="240" stroke="#2980b9" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+  <text x="600" y="232" font-size="9" fill="#2980b9">Q 触发</text>
+
+  <text x="40" y="322" font-size="10" fill="#777">变化点：故障支路串入 Brk；新增"检测→确认→锁存→跳闸"逻辑链。易错：Brk 门极接 Q 而非 Qbar；投运门防启动误锁存。</text>
+  <rect x="40" y="330" width="600" height="24" rx="5" fill="#fef9e7" stroke="#b7950b" stroke-width="1.2"/>
+  <text x="50" y="346" font-size="10" fill="#7d6608">四性验证：A 敏感性 / B 选择性 / C 鲁棒性。对应继电保护"检测·延时·锁存·执行"。</text>
+</svg>

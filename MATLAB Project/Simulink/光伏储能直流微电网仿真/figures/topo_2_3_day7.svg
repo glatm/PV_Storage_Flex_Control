@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" width="680" height="320" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#2c3e50"/></marker>
+    <marker id="carr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#2980b9"/></marker>
+  </defs>
+  <rect x="0" y="0" width="680" height="320" fill="#ffffff"/>
+  <text x="340" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b2631">22.3 加 PI 电压闭环（母线自动稳 48V）</text>
+
+  <line x1="40" y1="180" x2="640" y2="180" stroke="#2c3e50" stroke-width="4"/>
+  <text x="340" y="172" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c3e50">48V 直流母线</text>
+
+  <!-- PV + Boost -->
+  <rect x="40" y="60" width="90" height="38" rx="5" fill="#eafaf1" stroke="#1e8449" stroke-width="2"/>
+  <text x="85" y="83" text-anchor="middle" font-size="12" fill="#1e8449">PV</text>
+  <line x1="85" y1="98" x2="85" y2="120" stroke="#2c3e50" stroke-width="3"/>
+  <rect x="40" y="120" width="90" height="38" rx="5" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="85" y="143" text-anchor="middle" font-size="12" fill="#2471a3">Boost</text>
+  <line x1="130" y1="139" x2="200" y2="139" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="200" y1="139" x2="200" y2="180" stroke="#2c3e50" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- 半桥 + 电池 -->
+  <rect x="250" y="115" width="150" height="50" rx="6" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="325" y="136" text-anchor="middle" font-size="12" fill="#2471a3">半桥双向</text>
+  <text x="325" y="152" text-anchor="middle" font-size="10" fill="#555">S1_top / S2_bot</text>
+  <line x1="325" y1="115" x2="325" y2="180" stroke="#2c3e50" stroke-width="3" marker-end="url(#arr)"/>
+  <rect x="270" y="220" width="110" height="38" rx="5" fill="#eafaf1" stroke="#1e8449" stroke-width="2"/>
+  <text x="325" y="243" text-anchor="middle" font-size="11" fill="#1e8449">电池 48V</text>
+  <line x1="325" y1="165" x2="325" y2="220" stroke="#2c3e50" stroke-width="3"/>
+
+  <!-- 控制器（高亮新增） -->
+  <rect x="250" y="60" width="150" height="44" rx="6" fill="#fdebd0" stroke="#ca6f1e" stroke-width="2"/>
+  <text x="325" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#ca6f1e">PI 电压闭环</text>
+  <text x="325" y="95" text-anchor="middle" font-size="9" fill="#555">+Transport Delay +软启动</text>
+  <line x1="325" y1="104" x2="325" y2="115" stroke="#2980b9" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#carr)"/>
+  <text x="200" y="60" font-size="10" fill="#2980b9">占空比 d</text>
+  <line x1="290" y1="180" x2="290" y2="104" stroke="#2980b9" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#carr)"/>
+  <text x="150" y="100" font-size="10" fill="#2980b9">Vbus 反馈</text>
+
+  <!-- 负载 -->
+  <rect x="520" y="120" width="100" height="44" rx="5" fill="#fadbd8" stroke="#922b21" stroke-width="2"/>
+  <text x="570" y="143" text-anchor="middle" font-size="12" fill="#922b21">负载</text>
+  <line x1="570" y1="120" x2="570" y2="180" stroke="#2c3e50" stroke-width="3" marker-end="url(#arr)"/>
+
+  <text x="40" y="288" font-size="10" fill="#777">变化点：第一次有"控制器"——母线调压执行器是电池侧半桥（不是 PV 侧 Boost）。PI 消静差、Transport Delay 破代数环、软启动防冲击。</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" width="680" height="360" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#c0392b"/></marker>
+    <marker id="garr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#2980b9"/></marker>
+  </defs>
+  <rect x="0" y="0" width="680" height="360" fill="#ffffff"/>
+  <text x="340" y="24" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2631">PV Boost 单向变换器拓扑</text>
+
+  <!-- PV -->
+  <rect x="40" y="50" width="120" height="50" rx="6" fill="#eafaf1" stroke="#1e8449" stroke-width="2"/>
+  <text x="100" y="72" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e8449">PV 光伏源</text>
+  <text x="100" y="88" text-anchor="middle" font-size="10" fill="#555">电压源 + 电容</text>
+  <line x1="100" y1="100" x2="100" y2="120" stroke="#2c3e50" stroke-width="3"/>
+
+  <!-- 电感 L -->
+  <text x="60" y="138" font-size="12" font-weight="bold" fill="#2471a3">L</text>
+  <path d="M100,120 q12,12 0,24 q-12,12 0,24 q12,12 0,24" fill="none" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="100" y1="168" x2="100" y2="186" stroke="#2c3e50" stroke-width="3"/>
+  <text x="116" y="172" font-size="10" fill="#555">Boost 电感</text>
+
+  <!-- 开关节点 -->
+  <circle cx="100" cy="192" r="4" fill="#2c3e50"/>
+  <text x="116" y="196" font-size="10" fill="#555">开关节点</text>
+
+  <!-- MOSFET 到地 -->
+  <rect x="70" y="230" width="60" height="40" rx="5" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="100" y="254" text-anchor="middle" font-size="12" fill="#2471a3">MOSFET</text>
+  <line x1="100" y1="192" x2="100" y2="230" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="100" y1="270" x2="100" y2="320" stroke="#2c3e50" stroke-width="3"/>
+
+  <!-- 二极管 续流 -->
+  <line x1="100" y1="192" x2="220" y2="192" stroke="#2c3e50" stroke-width="3"/>
+  <path d="M220,178 L250,192 L220,206 Z" fill="#27ae60" stroke="#1e8449" stroke-width="1.5"/>
+  <line x1="250" y1="192" x2="250" y2="320" stroke="#2c3e50" stroke-width="3"/>
+  <text x="232" y="172" font-size="10" fill="#1e8449">二极管</text>
+  <text x="232" y="220" font-size="9" fill="#555">A→节点</text>
+  <text x="232" y="232" font-size="9" fill="#555">K→输出</text>
+
+  <!-- 输出电容 + 母线 -->
+  <rect x="290" y="178" width="24" height="10" fill="none" stroke="#2c3e50" stroke-width="2"/>
+  <rect x="290" y="196" width="24" height="10" fill="none" stroke="#2c3e50" stroke-width="2"/>
+  <line x1="302" y1="206" x2="302" y2="320" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="250" y1="192" x2="290" y2="192" stroke="#2c3e50" stroke-width="3"/>
+  <text x="276" y="170" font-size="10" fill="#555">Cout</text>
+  <text x="330" y="186" font-size="13" font-weight="bold" fill="#c0392b">Vout → 母线(+)</text>
+  <line x1="314" y1="186" x2="430" y2="186" stroke="#2c3e50" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- 地 -->
+  <line x1="40" y1="320" x2="430" y2="320" stroke="#2c3e50" stroke-width="3"/>
+  <path d="M235,320 l-12,0 m12,-6 l-9,6 m9,-12 l-6,12" stroke="#2c3e50" stroke-width="2" fill="none"/>
+
+  <!-- Pulse Gen -->
+  <rect x="40" y="250" width="120" height="44" rx="6" fill="#fef9e7" stroke="#b7950b" stroke-width="2"/>
+  <text x="100" y="270" text-anchor="middle" font-size="12" fill="#b7950b">Pulse Gen 50%</text>
+  <text x="100" y="285" text-anchor="middle" font-size="10" fill="#555">0/12V 固定脉冲</text>
+  <line x1="100" y1="250" x2="100" y2="270" stroke="#2980b9" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#garr)"/>
+  <text x="150" y="244" font-size="10" fill="#2980b9">门极 G</text>
+
+  <!-- 电流方向 -->
+  <line x1="100" y1="110" x2="100" y2="150" stroke="#c0392b" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="130" y="135" font-size="11" font-weight="bold" fill="#c0392b">i (PV→母线)</text>
+
+  <rect x="470" y="60" width="190" height="60" rx="6" fill="#fdedec" stroke="#922b21" stroke-width="1.5"/>
+  <text x="565" y="84" text-anchor="middle" font-size="12" font-weight="bold" fill="#922b21">单向 = 二极管阻断反向</text>
+  <text x="565" y="102" text-anchor="middle" font-size="10" fill="#555">电流只能 PV→母线；</text>
+  <text x="565" y="114" text-anchor="middle" font-size="10" fill="#555">无法为电池充电</text>
+</svg>

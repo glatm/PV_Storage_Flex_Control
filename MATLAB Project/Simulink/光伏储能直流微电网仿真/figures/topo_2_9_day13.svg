@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 380" width="680" height="380" font-family="Segoe UI, Arial, sans-serif">
+  <defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#2c3e50"/></marker></defs>
+  <rect x="0" y="0" width="680" height="380" fill="#ffffff"/>
+  <text x="340" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b2631">22.9 700V + 隔离 DAB（电压等级与架构升级）</text>
+
+  <line x1="40" y1="150" x2="640" y2="150" stroke="#2c3e50" stroke-width="4"/>
+  <text x="340" y="142" text-anchor="middle" font-size="12" font-weight="bold" fill="#c0392b">700V 直流母线</text>
+
+  <!-- PV + Boost -->
+  <rect x="40" y="50" width="90" height="34" rx="5" fill="#eafaf1" stroke="#1e8449" stroke-width="2"/>
+  <text x="85" y="71" text-anchor="middle" font-size="11" fill="#1e8449">PV</text>
+  <line x1="85" y1="84" x2="85" y2="100" stroke="#2c3e50" stroke-width="3"/>
+  <rect x="40" y="100" width="90" height="34" rx="5" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="85" y="121" text-anchor="middle" font-size="11" fill="#2471a3">Boost</text>
+  <line x1="130" y1="117" x2="190" y2="117" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="190" y1="117" x2="190" y2="150" stroke="#2c3e50" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- DAB 原边全桥 -->
+  <rect x="200" y="90" width="95" height="48" rx="6" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="247" y="110" text-anchor="middle" font-size="11" fill="#2471a3">原边全桥</text>
+  <text x="247" y="125" text-anchor="middle" font-size="10" fill="#555">S1–S4 (700V)</text>
+  <line x1="295" y1="114" x2="330" y2="114" stroke="#2c3e50" stroke-width="3"/>
+  <!-- 漏感 L_lk -->
+  <path d="M330,114 q10,10 0,20 q-10,10 0,20" fill="none" stroke="#2c3e50" stroke-width="3"/>
+  <text x="345" y="108" font-size="9" fill="#555">L_lk</text>
+  <!-- 变压器 -->
+  <rect x="350" y="104" width="14" height="40" fill="#fdebd0" stroke="#ca6f1e" stroke-width="2"/>
+  <text x="357" y="156" text-anchor="middle" font-size="9" fill="#ca6f1e">n=240/700</text>
+  <!-- 副边全桥 -->
+  <rect x="376" y="90" width="95" height="48" rx="6" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="423" y="110" text-anchor="middle" font-size="11" fill="#2471a3">副边全桥</text>
+  <text x="423" y="125" text-anchor="middle" font-size="10" fill="#555">S5–S8 (240V)</text>
+  <line x1="471" y1="114" x2="540" y2="114" stroke="#2c3e50" stroke-width="3"/>
+
+  <!-- 电池 240V -->
+  <rect x="540" y="190" width="100" height="44" rx="6" fill="#eafaf1" stroke="#1e8449" stroke-width="2"/>
+  <text x="590" y="212" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e8449">电池 240V</text>
+  <text x="590" y="227" text-anchor="middle" font-size="9" fill="#555">Cin_Bat</text>
+  <line x1="590" y1="190" x2="590" y2="158" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="423" y1="138" x2="423" y2="158" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="423" y1="158" x2="590" y2="158" stroke="#2c3e50" stroke-width="3"/>
+
+  <!-- 独立接地 -->
+  <line x1="247" y1="138" x2="247" y2="320" stroke="#2c3e50" stroke-width="3"/>
+  <path d="M247,320 l-12,0 m12,-6 l-9,6 m9,-12 l-6,12" stroke="#2c3e50" stroke-width="2" fill="none"/>
+  <text x="247" y="340" text-anchor="middle" font-size="10" fill="#922b21">原边地(独立)</text>
+  <line x1="590" y1="234" x2="590" y2="320" stroke="#2c3e50" stroke-width="3"/>
+  <path d="M590,320 l-12,0 m12,-6 l-9,6 m9,-12 l-6,12" stroke="#2c3e50" stroke-width="2" fill="none"/>
+  <text x="590" y="340" text-anchor="middle" font-size="10" fill="#922b21">副边地(独立)</text>
+
+  <!-- 移相 φ -->
+  <rect x="330" y="250" width="90" height="34" rx="6" fill="#fdebd0" stroke="#ca6f1e" stroke-width="2"/>
+  <text x="375" y="271" text-anchor="middle" font-size="11" font-weight="bold" fill="#ca6f1e">移相角 φ</text>
+  <line x1="375" y1="250" x2="375" y2="232" stroke="#2980b9" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="330" y1="138" x2="330" y2="250" stroke="#2980b9" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="470" y1="138" x2="470" y2="250" stroke="#2980b9" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+  <text x="480" y="244" font-size="9" fill="#2980b9">驱动两桥</text>
+
+  <!-- Buck 负载端 -->
+  <rect x="490" y="60" width="90" height="40" rx="6" fill="#fef9e7" stroke="#b7950b" stroke-width="2"/>
+  <text x="535" y="80" text-anchor="middle" font-size="11" fill="#b7950b">Buck 负载端</text>
+  <text x="535" y="94" text-anchor="middle" font-size="9" fill="#555">700V→负载</text>
+  <line x1="490" y1="80" x2="430" y2="80" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="640" y1="150" x2="580" y2="150" stroke="#2c3e50" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="535" y1="100" x2="535" y2="150" stroke="#2c3e50" stroke-width="3"/>
+
+  <text x="40" y="366" font-size="10" fill="#777">变化点：48V→700V；电池接入从"非隔离半桥"升级为"隔离 DAB"（双全桥+变压器+漏感）。原副边各自独立接地。φ 一个旋钮管双向功率。</text>
+</svg>

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 380" width="680" height="380" font-family="Segoe UI, Arial, sans-serif">
+  <defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#2c3e50"/></marker></defs>
+  <rect x="0" y="0" width="680" height="380" fill="#ffffff"/>
+  <text x="340" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b2631">21.10 700V 终态三环闭环集成（Day 14–15 验收版）</text>
+
+  <line x1="40" y1="150" x2="640" y2="150" stroke="#2c3e50" stroke-width="4"/>
+  <text x="340" y="142" text-anchor="middle" font-size="12" font-weight="bold" fill="#c0392b">700V 直流母线（PI_Boost 闭环调压）</text>
+
+  <!-- PV + Boost（闭环母线调压器） -->
+  <rect x="40" y="50" width="90" height="34" rx="5" fill="#eafaf1" stroke="#1e8449" stroke-width="2"/>
+  <text x="85" y="71" text-anchor="middle" font-size="11" fill="#1e8449">PV</text>
+  <line x1="85" y1="84" x2="85" y2="100" stroke="#2c3e50" stroke-width="3"/>
+  <rect x="40" y="100" width="90" height="34" rx="5" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="85" y="121" text-anchor="middle" font-size="11" fill="#2471a3">Boost</text>
+  <line x1="130" y1="117" x2="190" y2="117" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="190" y1="117" x2="190" y2="150" stroke="#2c3e50" stroke-width="3" marker-end="url(#arr)"/>
+  <text x="135" y="92" font-size="9" fill="#2471a3">PI_Boost 母线调压器</text>
+  <text x="135" y="104" font-size="8" fill="#555">(前馈 D=1−Vin/Vout+PI 微调)</text>
+
+  <!-- DAB 原边全桥 -->
+  <rect x="200" y="90" width="95" height="48" rx="6" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="247" y="110" text-anchor="middle" font-size="11" fill="#2471a3">原边全桥</text>
+  <text x="247" y="125" text-anchor="middle" font-size="10" fill="#555">S1–S4 (700V)</text>
+  <line x1="295" y1="114" x2="320" y2="114" stroke="#2c3e50" stroke-width="3"/>
+  <!-- 漏感 L_lk + 隔直 C_block -->
+  <path d="M320,114 q10,10 0,20 q-10,10 0,20" fill="none" stroke="#2c3e50" stroke-width="3"/>
+  <text x="332" y="108" font-size="9" fill="#555">L_lk</text>
+  <rect x="345" y="104" width="14" height="40" fill="#fdebd0" stroke="#ca6f1e" stroke-width="2"/>
+  <text x="352" y="158" text-anchor="middle" font-size="8" fill="#ca6f1e">n=240/700</text>
+  <text x="330" y="180" font-size="8" fill="#ca6f1e">C_block 隔直</text>
+  <!-- 副边全桥 -->
+  <rect x="376" y="90" width="95" height="48" rx="6" fill="#eaf2f8" stroke="#2471a3" stroke-width="2"/>
+  <text x="423" y="110" text-anchor="middle" font-size="11" fill="#2471a3">副边全桥</text>
+  <text x="423" y="125" text-anchor="middle" font-size="10" fill="#555">S5–S8 (240V)</text>
+  <line x1="471" y1="114" x2="540" y2="114" stroke="#2c3e50" stroke-width="3"/>
+
+  <!-- 电池 240V -->
+  <rect x="540" y="190" width="100" height="44" rx="6" fill="#eafaf1" stroke="#1e8449" stroke-width="2"/>
+  <text x="590" y="212" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e8449">电池 240V</text>
+  <text x="590" y="227" text-anchor="middle" font-size="9" fill="#555">PI_DAB 功率平衡</text>
+  <line x1="590" y1="190" x2="590" y2="158" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="423" y1="138" x2="423" y2="158" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="423" y1="158" x2="590" y2="158" stroke="#2c3e50" stroke-width="3"/>
+
+  <!-- 独立接地 -->
+  <line x1="247" y1="138" x2="247" y2="320" stroke="#2c3e50" stroke-width="3"/>
+  <path d="M247,320 l-12,0 m12,-6 l-9,6 m9,-12 l-6,12" stroke="#2c3e50" stroke-width="2" fill="none"/>
+  <text x="247" y="340" text-anchor="middle" font-size="10" fill="#922b21">原边地(独立)</text>
+  <line x1="590" y1="234" x2="590" y2="320" stroke="#2c3e50" stroke-width="3"/>
+  <path d="M590,320 l-12,0 m12,-6 l-9,6 m9,-12 l-6,12" stroke="#2c3e50" stroke-width="2" fill="none"/>
+  <text x="590" y="340" text-anchor="middle" font-size="10" fill="#922b21">副边地(独立)</text>
+
+  <!-- φ 命令成形 -->
+  <rect x="320" y="250" width="120" height="40" rx="6" fill="#fdebd0" stroke="#ca6f1e" stroke-width="2"/>
+  <text x="380" y="268" text-anchor="middle" font-size="10" font-weight="bold" fill="#ca6f1e">φ 命令成形</text>
+  <text x="380" y="282" text-anchor="middle" font-size="9" fill="#555">ZOH_phi 50µs + RL_phi</text>
+  <line x1="380" y1="250" x2="380" y2="232" stroke="#2980b9" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="330" y1="138" x2="330" y2="250" stroke="#2980b9" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <!-- Buck 负载端（闭环 400V） -->
+  <rect x="490" y="60" width="95" height="40" rx="6" fill="#fef9e7" stroke="#b7950b" stroke-width="2"/>
+  <text x="537" y="80" text-anchor="middle" font-size="11" fill="#b7950b">Buck 负载端</text>
+  <text x="537" y="94" text-anchor="middle" font-size="9" fill="#555">PI_Buck 稳 400V</text>
+  <line x1="490" y1="80" x2="430" y2="80" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="640" y1="150" x2="585" y2="150" stroke="#2c3e50" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="537" y1="100" x2="537" y2="150" stroke="#2c3e50" stroke-width="3"/>
+
+  <!-- 保护 S5（Day15 硬保护 + IMD 监测） -->
+  <rect x="40" y="250" width="130" height="44" rx="6" fill="#fadbd8" stroke="#922b21" stroke-width="2"/>
+  <text x="105" y="268" text-anchor="middle" font-size="10" font-weight="bold" fill="#922b21">保护 S5</text>
+  <text x="105" y="282" text-anchor="middle" font-size="9" fill="#555">UV490/OV805/OC43/OC20 + Brk</text>
+  <line x1="105" y1="250" x2="105" y2="232" stroke="#922b21" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+
+  <!-- 调控权反转 callout -->
+  <rect x="200" y="250" width="100" height="40" rx="6" fill="#eafaf1" stroke="#1e8449" stroke-width="2"/>
+  <text x="250" y="266" text-anchor="middle" font-size="9" font-weight="bold" fill="#1e8449">调控权反转</text>
+  <text x="250" y="280" text-anchor="middle" font-size="8" fill="#555">Boost 当母线调压器</text>
+
+  <text x="40" y="366" font-size="10" fill="#777">变化点（相对 21.9 开环）：Boost/DAB/Buck 三环全闭环；Boost 成母线调压主执行器（与 48V 相反）；补 ZOH_phi+RL_phi、GD_Boost、C_block、Buck 投运门；Day15 叠 IMD 三层安全。</text>
+</svg>

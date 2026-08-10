@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" width="680" height="400" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="rarr" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#c0392b"/></marker>
+    <marker id="garr" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#27ae60"/></marker>
+  </defs>
+  <rect x="0" y="0" width="680" height="400" fill="#ffffff"/>
+  <text x="340" y="22" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2631">Boost 模式电流环（电池放电：电池 → 母线）</text>
+
+  <!-- 面板A 储能阶段 -->
+  <text x="170" y="48" text-anchor="middle" font-size="13" font-weight="bold" fill="#2471a3">① 储能阶段 · S2_bot 导通</text>
+  <line x1="90" y1="70" x2="250" y2="70" stroke="#2c3e50" stroke-width="3"/>
+  <text x="90" y="64" font-size="11" fill="#c0392b">母线(+)</text>
+  <line x1="170" y1="70" x2="170" y2="90" stroke="#2c3e50" stroke-width="3"/>
+  <rect x="145" y="90" width="50" height="30" rx="4" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1.5"/>
+  <text x="170" y="109" text-anchor="middle" font-size="10" fill="#7f8c8d">S1 关</text>
+  <line x1="170" y1="120" x2="170" y2="135" stroke="#2c3e50" stroke-width="3"/>
+  <circle cx="170" cy="135" r="3" fill="#2c3e50"/>
+  <line x1="170" y1="135" x2="170" y2="150" stroke="#2c3e50" stroke-width="3"/>
+  <rect x="145" y="150" width="50" height="30" rx="4" fill="#d5f5e3" stroke="#27ae60" stroke-width="2"/>
+  <text x="170" y="169" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e8449">S2 通</text>
+  <line x1="170" y1="180" x2="170" y2="340" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="170" y1="135" x2="270" y2="135" stroke="#2c3e50" stroke-width="3"/>
+  <path d="M270,135 q12,12 0,24 q-12,12 0,24 q12,12 0,24 q-12,12 0,24" fill="none" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="270" y1="231" x2="270" y2="250" stroke="#2c3e50" stroke-width="3"/>
+  <rect x="235" y="250" width="70" height="46" rx="6" fill="#eafaf1" stroke="#1e8449" stroke-width="2"/>
+  <text x="270" y="272" text-anchor="middle" font-size="11" fill="#1e8449">电池</text>
+  <text x="270" y="286" text-anchor="middle" font-size="9" fill="#555">48V</text>
+  <line x1="270" y1="296" x2="270" y2="340" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="90" y1="340" x2="300" y2="340" stroke="#2c3e50" stroke-width="3"/>
+  <text x="90" y="356" font-size="11" fill="#2c3e50">GND</text>
+  <!-- 电流环 储能 -->
+  <polyline points="270,250 270,231 270,135 170,135 170,180" fill="none" stroke="#c0392b" stroke-width="3.5" marker-end="url(#rarr)"/>
+  <text x="300" y="200" font-size="11" font-weight="bold" fill="#c0392b">iL 上升</text>
+  <text x="300" y="216" font-size="10" fill="#555">电池→L→S2→地</text>
+
+  <!-- 面板B 释能阶段 -->
+  <text x="510" y="48" text-anchor="middle" font-size="13" font-weight="bold" fill="#2471a3">② 释能阶段 · S1_top 导通</text>
+  <line x1="430" y1="70" x2="590" y2="70" stroke="#2c3e50" stroke-width="3"/>
+  <text x="430" y="64" font-size="11" fill="#c0392b">母线(+)</text>
+  <line x1="510" y1="70" x2="510" y2="90" stroke="#2c3e50" stroke-width="3"/>
+  <rect x="485" y="90" width="50" height="30" rx="4" fill="#d5f5e3" stroke="#27ae60" stroke-width="2"/>
+  <text x="510" y="109" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e8449">S1 通</text>
+  <line x1="510" y1="120" x2="510" y2="135" stroke="#2c3e50" stroke-width="3"/>
+  <circle cx="510" cy="135" r="3" fill="#2c3e50"/>
+  <line x1="510" y1="135" x2="510" y2="150" stroke="#2c3e50" stroke-width="3"/>
+  <rect x="485" y="150" width="50" height="30" rx="4" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1.5"/>
+  <text x="510" y="169" text-anchor="middle" font-size="10" fill="#7f8c8d">S2 关</text>
+  <line x1="510" y1="180" x2="510" y2="340" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="510" y1="135" x2="610" y2="135" stroke="#2c3e50" stroke-width="3"/>
+  <path d="M610,135 q12,12 0,24 q-12,12 0,24 q12,12 0,24 q-12,12 0,24" fill="none" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="610" y1="231" x2="610" y2="250" stroke="#2c3e50" stroke-width="3"/>
+  <rect x="575" y="250" width="70" height="46" rx="6" fill="#eafaf1" stroke="#1e8449" stroke-width="2"/>
+  <text x="610" y="272" text-anchor="middle" font-size="11" fill="#1e8449">电池</text>
+  <text x="610" y="286" text-anchor="middle" font-size="9" fill="#555">48V</text>
+  <line x1="610" y1="296" x2="610" y2="340" stroke="#2c3e50" stroke-width="3"/>
+  <line x1="430" y1="340" x2="640" y2="340" stroke="#2c3e50" stroke-width="3"/>
+  <text x="430" y="356" font-size="11" fill="#2c3e50">GND</text>
+  <!-- 电流环 释能 -->
+  <polyline points="610,250 610,231 610,135 510,135 510,120" fill="none" stroke="#c0392b" stroke-width="3.5" marker-end="url(#rarr)"/>
+  <polyline points="510,70 430,70 430,340 610,340 610,296" fill="none" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#rarr)"/>
+  <text x="625" y="110" font-size="10" font-weight="bold" fill="#c0392b">iL 下降</text>
+  <text x="625" y="126" font-size="9" fill="#555">电池→L→S1→母线</text>
+
+  <text x="20" y="386" font-size="10" fill="#777">同一电感 L_bidir，CCM 下电流不归零；下管斩波→Boost（电池放电），Vbus=Vbat/(1−D_bot)。</text>
+</svg>
