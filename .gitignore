@@ -44,3 +44,65 @@ logs/
 *.pt
 *.onnx
 *.npy
+
+# Zotero local data directory (local SQLite database, not source)
+Zotero/
+
+# Obsidian plugin runtime data (regenerated config / caches)
+.obsidian/plugins/*/data.json
+
+# ---------------------------------------------------------------------------
+# 2026-08-27 上传范围的显式划定
+# 本次提交范围仅为「python project/PV_Storage_Flex_Control/」内的源码与文档。
+# 以下内容含第三方图纸、真实业务数据或个人材料，不纳入版本库。
+# ---------------------------------------------------------------------------
+
+# 原始业务数据（含真实园区电量/电费/能耗，第三方甲方数据）
+数据资料/
+
+# 学习资料（b站课程视频、讲义 PDF/PPT，体量大且为第三方版权内容）
+笔记/
+
+# 个人记忆库（含个人材料与备份文件）
+永久记忆/
+
+# 含真实工程图号与容量标注的提取产物
+python project/PV_Storage_Flex_Control/竣工图容量提取.txt
+
+# 合并 md 时保留的原始备份（内容已并入 代码说明.md）
+python project/PV_Storage_Flex_Control/.backup_md_20260914/
+
+# 早期实验产出（可由 run_extension_study.py 重跑生成）
+python project/PV_Storage_Flex_Control/extension_results.json
+
+# 图表可由 python -m pvflex.cli 重跑生成，且曲线含真实园区电量
+# （*.png 已在上面 "Large / binary artifacts" 段统一排除）
+
+# 个人身份与学业材料（位于仓库根）
+叶伟龙-*.pdf
+班级临时负责人自荐简历.docx
+电气学院硕士毕业去向分析.pptx
+电气与信息工程学院2026级研究生守则*.pptx
+福建理工大学能源动力专业学位*.pdf
+20*届电气学院硕士毕业生去向信息.XLSX
+英语四级一个月冲刺计划.md
+
+# 本地工作副本 / 分析脚本临时产物
+*.desensitize.bak
+_desens_*.txt
+_baseline_*.txt
+_verify_*.txt
+_audit_*.py
+_scan_*.py
+_pre_git_check*.py
+_cleanup.py
+_tracked.txt
+
+# 修正：研究生入学教育材料
+# 实际文件名为「...2026级研究生守规矩·明底线·入学教育.pptx」，
+# 前面的 ...研究生守则*.pptx 因多一个「则」字未命中，此处补更宽的规则。
+电气与信息工程学院2026级研究生*.pptx
+
+# 工程目录内的本地校验脚本（一次性过程证据，非工程源码）
+python project/PV_Storage_Flex_Control/_*.py
+python project/PV_Storage_Flex_Control/_*.txt
