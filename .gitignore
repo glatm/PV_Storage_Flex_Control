@@ -106,3 +106,23 @@ _tracked.txt
 # 工程目录内的本地校验脚本（一次性过程证据，非工程源码）
 python project/PV_Storage_Flex_Control/_*.py
 python project/PV_Storage_Flex_Control/_*.txt
+
+# 2026-08-27 FIX: 放行源码包 src/pvflex/data/（此前被 L31 的 `data/` 误伤）
+!python project/PV_Storage_Flex_Control/src/pvflex/data/
+!python project/PV_Storage_Flex_Control/src/pvflex/data/__init__.py
+!python project/PV_Storage_Flex_Control/src/pvflex/data/loaders.py
+!python project/PV_Storage_Flex_Control/src/pvflex/data/pdf_readers.py
+!python project/PV_Storage_Flex_Control/src/pvflex/data/preprocess.py
+
+# 2026-08-27 FIX v2: 递归放行 src/pvflex/data/ 全树
+# v1 的逐文件 `!` 未能生效：git 对"父目录被排除"的路径不会深入匹配子文件。
+# 这里用递归通配 + 目录级解禁双保险，彻底覆盖 L31 的 `data/` 无锚定规则。
+!python project/PV_Storage_Flex_Control/src/pvflex/data/
+!python project/PV_Storage_Flex_Control/src/pvflex/data/**
+!python project/PV_Storage_Flex_Control/src/pvflex/data/*.py
+
+# 2026-08-27 FIX v3: 收窄 v2 递归放行，重新排除字节码缓存
+# v2 的 `!.../data/**` 会连带放行 __pycache__ 里的 .pyc（覆盖了文件开头的 __pycache__/ 规则）。
+# 下列规则位于文件末尾、优先级最高，把字节码缓存重新排除。
+python project/PV_Storage_Flex_Control/src/pvflex/data/**/__pycache__/
+python project/PV_Storage_Flex_Control/src/pvflex/data/**/*.py[cod]
